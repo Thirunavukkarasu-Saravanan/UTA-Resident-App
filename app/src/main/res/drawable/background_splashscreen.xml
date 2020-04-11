@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/white"
+        android:text="copyright (© 2020, CSE5324 Group 5: Green Team) "/>
+
+<item>
+
+    <bitmap android:src="@drawable/utamas"
+        android:gravity="center"
+     />
+
+
+</item>
+
+</layer-list>
