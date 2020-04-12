@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".EmrgncyContct"></activity>
+
         <activity android:name=".ra.postAncmnt" />
         <activity android:name=".ra.RaHomeScreen" />
         <activity android:name=".admin.addApt" />

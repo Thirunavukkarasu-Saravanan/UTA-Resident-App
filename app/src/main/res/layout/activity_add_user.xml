@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/utab"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@drawable/utab"
     tools:context=".admin.addUser">
 
     <TextView
@@ -29,11 +29,11 @@
         android:id="@+id/textInputEditText9"
         android:layout_width="329dp"
         android:layout_height="42dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="368dp"
         android:hint="Apartment Number"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -41,10 +41,23 @@
         android:id="@+id/textInputEditText15"
         android:layout_width="329dp"
         android:layout_height="42dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="408dp"
         android:hint="Graduation Date"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText16"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="448dp"
+        android:hint="Password"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -52,11 +65,11 @@
         android:id="@+id/textInputEditText8"
         android:layout_width="329dp"
         android:layout_height="42dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="328dp"
         android:hint="Emergency Contact"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -64,11 +77,11 @@
         android:id="@+id/textInputEditText5"
         android:layout_width="329dp"
         android:layout_height="42dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="248dp"
         android:hint="Phone"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -76,11 +89,11 @@
         android:id="@+id/textInputEditText7"
         android:layout_width="329dp"
         android:layout_height="42dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="288dp"
         android:hint="Apartment Block"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -89,7 +102,7 @@
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginTop="112dp"
-        android:hint="Last Name"
+        android:hint="User Name"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +127,6 @@
         android:hint="Email"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -123,10 +135,10 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toTopOf="parent"
         android:textColorHint="@color/colorPrimary"
-        tools:layout_editor_absoluteX="1dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,11 +146,11 @@
         android:id="@+id/textInputEditText"
         android:layout_width="327dp"
         android:layout_height="42dp"
-        android:layout_marginTop="68dp"
-        android:hint="First Name"
+        android:layout_marginTop="76dp"
+        android:hint="User ID"
         android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -152,25 +164,21 @@
         android:id="@+id/radioButton"
         android:layout_width="151dp"
         android:layout_height="33dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="500dp"
         android:text="Resident Assitant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText9"
-        app:layout_constraintVertical_bias="0.341" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/radioButton2"
         android:layout_width="128dp"
         android:layout_height="35dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="48dp"
         android:text="Resident"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText9"
-        app:layout_constraintVertical_bias="0.338" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button7"
@@ -179,9 +187,9 @@
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText9"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintVertical_bias="0.972" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
