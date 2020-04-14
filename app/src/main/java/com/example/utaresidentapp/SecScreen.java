@@ -56,7 +56,7 @@ public class SecScreen extends AppCompatActivity {
             Intent LoginScreen = new Intent(SecScreen.this, AdminHome.class);
             startActivity(LoginScreen);
         }
-        else if(res == true  && user.equals("admin")){
+        else if(res == true && user.equals("admin")){
 
 
                 Log.d("sara_sa", "resstatus");
@@ -65,7 +65,7 @@ public class SecScreen extends AppCompatActivity {
                 startActivity(LoginScreen);
 
         }
-        else if(res == true  && user.equals("sarara")){
+        else if( res == true && user.equals("sarara")){
 
 
             Log.d("sara_sa", "resstatus");

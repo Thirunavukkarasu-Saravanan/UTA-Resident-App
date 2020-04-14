@@ -18,11 +18,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
-    public static final String DATABASE_NAME ="resdntapp.db";
+    public static final String DATABASE_NAME ="resident.db";
     public static final String TABLE_NAME ="mainusers";
-    public static final String COL_1="id";
-    public static final String COL_2="username";
-    public static final String COL_3="password ";
+    public static final String COL_1="utaid";
+    public static final String COL_2="us_id";
+    public static final String COL_3="pass_word";
+    public static final String COL_4="userrole";
+    /*public static final String COL_4="name";
+    public static final String COL_5="phone";
+    public static final String COL_6="aptblock";
+    public static final String COL_7="emerphone";
+    public static final String COL_8="aptno";
+    public static final String COL_9="graddt";*/
+
 
 
 
@@ -33,7 +41,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        sqLiteDatabase.execSQL("CREATE TABLE mainusers( id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE mainusers( us_id TEXT  , " +
+                "username TEXT, " +
+                "utaid INTEGER PRIMARY KEY, " +
+                "phone INTEGER, " +
+                "aptblock INTEGER, " +
+                "emerphone INTEGER, " +
+                "aptno INTEGER, " +
+                "graddt INTEGER, " +
+                "pass_word INTEGER, " +
+                "userrole INTEGER)");
         Log.d("Sara_dbhelper", "tablecreated");
 
 
@@ -43,7 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
 
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
 
     }
@@ -51,16 +68,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public long addUser(int id, String user, String password){
+    public long addUser(String s_id,
+                        String s_username,
+                        String s_utaid,
+                        String s_phone,
+                        String s_aptblock,
+                        String s_emerphone,
+                        String s_aptno,
+                        String s_graddt,
+                        String s_password,
+                        String s_userrole)
+                        {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("username", id);
-        contentValues.put("username", user);
-        contentValues.put("password",password);
+        contentValues.put("us_id", s_id);
+        contentValues.put("username", s_username);
+        contentValues.put("utaid", s_utaid);
+        contentValues.put("phone",s_phone);
+        contentValues.put("aptblock",s_aptblock);
+        contentValues.put("emerphone",s_emerphone);
+        contentValues.put("aptno",s_aptno);
+        contentValues.put("graddt",s_graddt);
+        contentValues.put("pass_word",s_password);
+        contentValues.put("userrole",s_userrole);
+
+
 
         long res = db.insert("mainusers" , null, contentValues);
         Log.d(
-                "querytag","sara created"
+                "querytag","sara created" + res
 
         );
         db.close();
@@ -69,11 +105,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public boolean checkUser(String username, String password){
-        String[] columns ={ COL_1 };
+        String[] columns ={ COL_1, COL_4 };
         SQLiteDatabase db = getReadableDatabase();
         String selection = COL_2 + "=?" + " and " + COL_3 + "=?";
         String[] selectionArgs = {username, password};
         Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+
         int count = cursor.getCount();
         cursor.close();
         db.close();

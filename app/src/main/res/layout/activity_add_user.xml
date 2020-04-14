@@ -158,9 +158,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="401dp" />
+        tools:layout_editor_absoluteY="401dp"
+        android:id="@+id/myRadioGroup"
+        tools:ignore="MissingConstraints" />
 
     <RadioButton
+        android:onClick="onRadioButtonClicked"
         android:id="@+id/radioButton"
         android:layout_width="151dp"
         android:layout_height="33dp"
@@ -171,6 +174,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
+        android:onClick="onRadioButtonClicked"
         android:id="@+id/radioButton2"
         android:layout_width="128dp"
         android:layout_height="35dp"
