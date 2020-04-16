@@ -52,6 +52,7 @@ public class addApt extends AppCompatActivity {
                     Log.d("sara_apt", "aptname field " + String.valueOf(aptname));
                     Log.d("sara_apt", "aptblock field " + String.valueOf(aptblock));
                     Log.d("sara_apt", "aptnumber field " + String.valueOf(aptnumber));
+
                     if(aptblock.matches("[3-9]\\d\\d")){
                         Log.d("sara_apt", "regex  pass for apt block  " );
                         if(!aptnumber.isEmpty() && aptnumber.length() == 3){
