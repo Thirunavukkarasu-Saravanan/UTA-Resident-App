@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity2() {
        db = new DatabaseHelper(this);
-      db.addUser(1,"sara", "sara" );
-        db.addUser(2,"admin", "admin" );
-        db.addUser(2,"sarara", "sarara" );
+      //db.addUser(1,"sara", "sara" );
+      //  db.addUser(2,"admin", "admin" );
+       // db.addUser(2,"sarara", "sarara" );
         Log.d("Sara_corejava","insert worked");
         Intent intent = new Intent(this,SecScreen.class
         );
