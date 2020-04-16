@@ -87,8 +87,6 @@ public class addApt extends AppCompatActivity {
                     Toast.makeText(addApt.this, "Apartname field can't  be empty", Toast.LENGTH_SHORT).show();
                 }
 
-
-
             }
 
 
