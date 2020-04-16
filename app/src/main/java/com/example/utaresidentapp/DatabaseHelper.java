@@ -12,14 +12,16 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    private static String STRING2 = null;
     private static SQLiteDatabase sqliteDb;
 
     private static DatabaseHelper instance;
 
     private static final int DATABASE_VERSION = 1;
 
-    public static final String DATABASE_NAME ="resident.db";
+    public static final String DATABASE_NAME ="resident1.db";
     public static final String TABLE_NAME ="mainusers";
+    public static final String TABLE_NAME2 ="mainaparatment";
     public static final String COL_1="utaid";
     public static final String COL_2="us_id";
     public static final String COL_3="pass_word";
@@ -54,6 +56,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d("Sara_dbhelper", "tablecreated");
 
 
+        /*sqLiteDatabase.execSQL("CREATE TABLE mainaparatment( apt_id INTEGER PRIMARY KEY AUTOINCREMENT  , " +
+                "apart_name  TEXT, " +
+                "apart_block INTEGER, " +
+                "apart_number  INTEGER)");
+        Log.d("Sara_dbhelper", "apartment table created");*/
+
+        STRING2 = ("CREATE TABLE mainaparatment( apt_id INTEGER PRIMARY KEY AUTOINCREMENT  , " +
+                "apart_name  TEXT, " +
+                "apart_block INTEGER, " +
+                "apart_number  INTEGER)");
+
+        sqLiteDatabase.execSQL(STRING2);
+        Log.d("Sara_dbhelper", "apartment table created");
+
+
+
+
 
     }
 
@@ -61,7 +80,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME2);
         onCreate(sqLiteDatabase);
+        sqliteDb.execSQL(STRING2);
 
     }
 
@@ -165,4 +186,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return  false;
 
     }
+
+    public long addapart(String a_name,String a_block,String a_number)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+       // contentValues.put("apt_id", apt_id);
+        contentValues.put("apart_name", a_name);
+        contentValues.put("apart_block", a_block);
+        contentValues.put("apart_number", a_number);
+
+        long aptres = db.insert("mainaparatment" , null, contentValues);
+        Log.d(
+                "querytag","sara created" + aptres
+
+        );
+        db.close();
+        //return res;
+
+
+
+        return aptres;
+    }
+
+
+
 }

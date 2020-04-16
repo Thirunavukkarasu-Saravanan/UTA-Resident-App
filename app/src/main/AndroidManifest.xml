@@ -25,6 +25,7 @@
         <activity android:name=".DummyActivity" />
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SecScreen" />
+        <activity android:name=".profile"/>
         <activity android:name=".MainActivity" />
         <activity
             android:name=".splashScreen"

@@ -54,7 +54,7 @@ public class profile extends AppCompatActivity {
         Log.d("sara_radio", "before function to chekc if clicked " + rb2.getText());
 
         //populate the fields
-        Cursor cursor= db.getProfile("2234");
+        Cursor cursor= db.getProfile("sara");
         if(cursor.moveToFirst()){
             String Userid=cursor.getString(1);
             String UserName=cursor.getString(4);
