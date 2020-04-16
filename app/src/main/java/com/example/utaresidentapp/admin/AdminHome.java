@@ -15,10 +15,12 @@ import android.widget.Toast;
 
 import com.example.utaresidentapp.R;
 import com.example.utaresidentapp.SecScreen;
+import com.example.utaresidentapp.profile;
 import com.example.utaresidentapp.users.User_WorkOrder;
 
 public class AdminHome extends AppCompatActivity {
     private Button btn_adduser;
+    private Button btn_profile;
 
 
     @Override
@@ -27,11 +29,21 @@ public class AdminHome extends AppCompatActivity {
         setContentView(R.layout.activity_admin_home);
 
 
-         btn_adduser = findViewById(R.id.button2);
+        btn_adduser = findViewById(R.id.button2);
         btn_adduser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openaddUser();
+            }
+
+
+        });
+
+        btn_profile = findViewById(R.id.button5);
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProfile();
             }
 
 
@@ -73,6 +85,14 @@ public class AdminHome extends AppCompatActivity {
         Toast.makeText(AdminHome.this, "Add user click success from home page", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, addUser.class);
+        startActivity(intent);
+    }
+
+    public void openProfile() {
+        Log.d("sara_admin", "buttonclick success");
+        Toast.makeText(AdminHome.this, "View Profile click success from home page", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, profile.class);
         startActivity(intent);
     }
 
