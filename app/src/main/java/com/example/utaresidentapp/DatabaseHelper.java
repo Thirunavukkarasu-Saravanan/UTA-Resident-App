@@ -24,12 +24,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_2="us_id";
     public static final String COL_3="pass_word";
     public static final String COL_4="userrole";
-    /*public static final String COL_4="name";
-    public static final String COL_5="phone";
-    public static final String COL_6="aptblock";
-    public static final String COL_7="emerphone";
-    public static final String COL_8="aptno";
-    public static final String COL_9="graddt";*/
+    public static final String COL_5="username";
+    public static final String COL_6="phone";
+    public static final String COL_7="aptblock";
+    public static final String COL_8="emerphone";
+    public static final String COL_9="aptno";
+    public static final String COL_10="graddt";
 
 
 
@@ -103,6 +103,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public long UpdateProfile(String s_id,
+                        String s_username,
+                        String s_utaid,
+                        String s_phone,
+                        String s_aptblock,
+                        String s_emerphone,
+                        String s_aptno,
+                        String s_graddt,
+                        String s_password,
+                        String s_userrole)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("us_id", s_id);
+        contentValues.put("username", s_username);
+        contentValues.put("utaid", s_utaid);
+        contentValues.put("phone",s_phone);
+        contentValues.put("aptblock",s_aptblock);
+        contentValues.put("emerphone",s_emerphone);
+        contentValues.put("aptno",s_aptno);
+        contentValues.put("graddt",s_graddt);
+        contentValues.put("pass_word",s_password);
+        contentValues.put("userrole",s_userrole);
+
+
+
+        long res = db.update("mainusers" , contentValues, "us_id=?",new String[]{ s_id});
+        Log.d(
+                "querytag","Profile updated" + res
+
+        );
+        db.close();
+        return res;
+    }
+
+
+    public Cursor getProfile(String us_id){
+        String[] columns ={ COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9, COL_10 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_2 + "=?";
+        String[] selectionArgs = {us_id};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+    }
 
     public boolean checkUser(String username, String password){
         String[] columns ={ COL_1, COL_4 };
