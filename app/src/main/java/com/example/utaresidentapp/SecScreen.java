@@ -21,7 +21,7 @@ public class SecScreen extends AppCompatActivity {
     Button mButtonLogin;
     DatabaseHelper db = new DatabaseHelper(this);
     LoginController lgncont = new LoginController();
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +52,14 @@ public class SecScreen extends AppCompatActivity {
 
         //mTextUsername.setText("chanhed");
         if(/*res == true && */user.equals("sara")) {
+            String session_username = mTextUsername.getText().toString();
+            Log.d("sara_login_session", "session_username" + session_username);
+
+
 
             Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
             Intent LoginScreen = new Intent(SecScreen.this, AdminHome.class);
+            LoginScreen.putExtra("USERNAME", session_username);
             startActivity(LoginScreen);
         }
         else if(res == true && user.equals("admin")){

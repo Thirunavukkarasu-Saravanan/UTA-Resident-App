@@ -25,6 +25,7 @@ public class profile extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton rb1; //= (RadioButton) findViewById(R.id.radioButton);
     RadioButton rb2; //= (RadioButton) findViewById(R.id.radioButton2);
+    static String session_var_userid;
 
     String usertype = "";
 
@@ -35,6 +36,9 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        session_var_userid = getIntent().getStringExtra("NAME");
+        Log.d("sara_login_session", "session_var_username in profile " + session_var_userid);
         rb1 = (RadioButton) findViewById(R.id.radioButton);
         rb2 = (RadioButton) findViewById(R.id.radioButton2);
 
@@ -53,8 +57,10 @@ public class profile extends AppCompatActivity {
         Log.d("sara_radio", "before function to chekc if clicked " + rb1.getText());
         Log.d("sara_radio", "before function to chekc if clicked " + rb2.getText());
 
+
+        Log.d("sara_login_session", "session_var_username in profile before getprofile" + session_var_userid);
         //populate the fields
-        Cursor cursor= db.getProfile("sara");
+        Cursor cursor= db.getProfile(session_var_userid);
         if(cursor.moveToFirst()){
             String Userid=cursor.getString(1);
             String UserName=cursor.getString(4);

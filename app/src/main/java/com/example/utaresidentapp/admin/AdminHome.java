@@ -25,12 +25,15 @@ public class AdminHome extends AppCompatActivity {
     private Button btn_profile;
     private Button btn_viewApartment;
     private Button btn_mod_user;
+    static String session_var_username;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
+        session_var_username = getIntent().getStringExtra("USERNAME");
+        Log.d("sara_login_session", "session_var_username in admin home " + session_var_username);
 
         //On button click to Call Add User  activity
         btn_adduser = findViewById(R.id.button2);
@@ -124,8 +127,9 @@ public class AdminHome extends AppCompatActivity {
     public void openProfile() {
         Log.d("sara_admin", "buttonclick success");
         Toast.makeText(AdminHome.this, "View Profile click success from home page", Toast.LENGTH_SHORT).show();
-
+        Log.d("sara_login_session", "session_var_username in adminhome when profile button is clicked" + session_var_username);
         Intent intent = new Intent(this, profile.class);
+        intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
 
