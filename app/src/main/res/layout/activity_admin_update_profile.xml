@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.admin_update_profile"
+    android:background="@drawable/utab"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/succView"
+        android:layout_width="250dp"
+        android:layout_height="53dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@color/colorPrimaryDark"
+        android:text="Modify Profile"
+        android:textColor="#3F51B5"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText9"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="368dp"
+        android:hint="Apartment Number"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText15"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="408dp"
+        android:hint="Graduation Date"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText16"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="532dp"
+        android:hint="Password"
+        android:visibility="gone"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText17"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="448dp"
+        android:hint="Password"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText8"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="328dp"
+        android:hint="Emergency Contact"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText5"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="248dp"
+        android:hint="Phone"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText7"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="288dp"
+        android:hint="Apartment Block"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText2"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="112dp"
+        android:hint="User Name"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText3"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="152dp"
+        android:hint="UTA ID"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText4"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="200dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="327dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="76dp"
+        android:hint="User ID"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="401dp"
+        android:id="@+id/myRadioGroup"
+        tools:ignore="MissingConstraints" />
+
+    <RadioButton
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/radioButton"
+        android:layout_width="151dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="500dp"
+        android:text="Resident Assitant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <RadioButton
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/radioButton2"
+        android:layout_width="128dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="48dp"
+        android:text="Resident"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText9"
+        app:layout_constraintVertical_bias="0.972" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

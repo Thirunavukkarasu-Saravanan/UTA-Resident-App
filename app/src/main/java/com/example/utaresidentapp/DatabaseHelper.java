@@ -32,6 +32,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_8="emerphone";
     public static final String COL_9="aptno";
     public static final String COL_10="graddt";
+    public static final String COL_11="apt_id";
+    public static final String COL_12="apart_name";
+    public static final String COL_13="apart_block";
+    public static final String COL_14="apart_number";
+
 
 
 
@@ -160,11 +165,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+
+
+    public Cursor getListContents(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME2,null);
+        return data;
+    }
+
+
     public Cursor getProfile(String us_id){
         String[] columns ={ COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9, COL_10 };
         SQLiteDatabase db = getReadableDatabase();
         String selection = COL_2 + "=?";
         String[] selectionArgs = {us_id};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+    }
+
+    public Cursor modifyProfile(String utaid){
+        String[] columns ={ COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9, COL_10 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_1 + "=?";
+        String[] selectionArgs = {utaid};
         Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
         return cursor;
     }
@@ -186,6 +210,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return  false;
 
     }
+
+
+
 
     public long addapart(String a_name,String a_block,String a_number)
     {

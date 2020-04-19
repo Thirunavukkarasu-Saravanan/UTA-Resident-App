@@ -10,10 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".admin.ViewApt"
-            android:label="@string/title_activity_view_apt"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".admin.admin_update_profile"></activity>
+        <activity android:name=".admin.modify_user" />
         <activity android:name=".EmrgncyContct" />
         <activity android:name=".ra.postAncmnt" />
         <activity android:name=".ra.RaHomeScreen" />
@@ -21,6 +19,7 @@
         <activity android:name=".admin.addUser" />
         <activity android:name=".admin.AdminHome" />
         <activity android:name=".users.User_WorkOrder" />
+        <activity android:name=".admin.viewApt" />
         <activity android:name=".Controller.Users.workorder" />
         <activity
             android:name=".ui.login.WorkOrder"
