@@ -10,8 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmrgncyContct"></activity>
-
+        <activity
+            android:name=".admin.ViewApt"
+            android:label="@string/title_activity_view_apt"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".EmrgncyContct" />
         <activity android:name=".ra.postAncmnt" />
         <activity android:name=".ra.RaHomeScreen" />
         <activity android:name=".admin.addApt" />
@@ -23,14 +26,13 @@
             android:name=".ui.login.WorkOrder"
             android:label="@string/title_activity_work_order" />
         <activity android:name=".DummyActivity" />
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SecScreen" />
-        <activity android:name=".profile"/>
+        <activity android:name=".profile" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".splashScreen"
-            android:theme="@style/splashScreen"
-            >
+            android:theme="@style/splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
