@@ -21,6 +21,7 @@ public class SecScreen extends AppCompatActivity {
     Button mButtonLogin;
     DatabaseHelper db = new DatabaseHelper(this);
     LoginController lgncont = new LoginController();
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

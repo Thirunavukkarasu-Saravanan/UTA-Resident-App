@@ -41,9 +41,7 @@ public class modify_user extends AppCompatActivity {
                 Log.d("sara_sessio_var", "uta_id " + uta_id);
                 Intent intent = new Intent(modify_user.this, admin_update_profile.class );
                 intent.putExtra("MAV_ID", uta_id);
-
                 startActivity(intent);
-
 
             }
         }
