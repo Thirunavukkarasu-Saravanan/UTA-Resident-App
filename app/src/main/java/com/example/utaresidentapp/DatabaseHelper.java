@@ -216,6 +216,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public Cursor checkRole(String username){
+        String[] columns ={ COL_4 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_2 + "=?";
+        String[] selectionArgs = {username};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+
+
+
+    }
+
+
 
 
     public long addapart(String a_name,String a_block,String a_number)

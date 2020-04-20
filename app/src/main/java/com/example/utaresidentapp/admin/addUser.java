@@ -25,7 +25,7 @@ public class addUser extends AppCompatActivity {
     RadioButton rb1; //= (RadioButton) findViewById(R.id.radioButton);
      RadioButton rb2; //= (RadioButton) findViewById(R.id.radioButton2);
 
-    String usertype = "";
+    String usertype = "3";
 
     DatabaseHelper db = new DatabaseHelper(this);
 
@@ -163,7 +163,8 @@ public class addUser extends AppCompatActivity {
                 break;
 
             case R.id.default_activity_button:
-                usertype = "1";
+                Toast.makeText(addUser.this, "Default switch case", Toast.LENGTH_SHORT).show();
+                usertype = "3";
                 Log.d("sara_radio", "inside default " + (rb2.getText()) +  " "  +usertype);
         }
     }
