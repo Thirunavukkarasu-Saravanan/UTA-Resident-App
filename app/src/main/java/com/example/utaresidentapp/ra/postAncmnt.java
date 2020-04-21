@@ -64,6 +64,7 @@ public class postAncmnt extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String heading = topic.getText().toString().trim();
+                
                 String description  = desc.getText().toString().trim();
 
                 String a_date = formattedDate.trim();
