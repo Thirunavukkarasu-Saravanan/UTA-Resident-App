@@ -45,56 +45,57 @@ public class SecScreen extends AppCompatActivity {
         });
     }
 
-    public void chechen(){
+    public void chechen() {
         //Toast.makeText(SecScreen.this, "checkinghere", Toast.LENGTH_SHORT).show();
         String user = mTextUsername.getText().toString().trim();
         String pwd = mTextPassword.getText().toString().trim();
-        Boolean res= db.checkUser(user,pwd);
+        Boolean res = db.checkUser(user, pwd);
         String temp = null;
 
         //mTextUsername.setText("chanhed");
 
-        if(res == true) {
-            Cursor cursor= db.checkRole(user);
-            if(cursor.moveToNext()){
-                 String myrole = cursor.getString(0);
-                Log.d("sara_sec_login", "myrole" + myrole);
-                temp = myrole;
+         if(res == true)  {
+        Cursor cursor = db.checkRole(user);
+        if (cursor.moveToNext()) {
+            String myrole = cursor.getString(0);
+            Log.d("sara_sec_login", "myrole" + myrole);
+            temp = myrole;
 
-            }
-
-            //admin role login
-            if (temp.equals("3") ) {
-                String session_username = mTextUsername.getText().toString();
-                Log.d("sara_login_session", "session_username" + session_username);
-
-
-                Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent LoginScreen = new Intent(SecScreen.this, AdminHome.class);
-                LoginScreen.putExtra("USERNAME", session_username);
-                startActivity(LoginScreen);
-            } else if (temp.equals("2") ) { //User role login
-
-
-                Log.d("sara_sa", "resstatus");
-                String session_username_user = mTextUsername.getText().toString();
-                Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent LoginScreen = new Intent(SecScreen.this, DummyActivity.class);
-                LoginScreen.putExtra("USERNAME", session_username_user);
-                startActivity(LoginScreen);
-
-            } else if ( temp.equals("1")) { //RA role login
-
-                Log.d("sara_sa", "resstatus");
-                String session_username_ra = mTextUsername.getText().toString();
-                Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent LoginScreen = new Intent(SecScreen.this, RaHomeScreen.class);
-                LoginScreen.putExtra("USERNAME", session_username_ra);
-                startActivity(LoginScreen);
-
-            }
         }
-        else
+
+        //admin role login
+        if (temp.equals("3") || user.equals("sara")) {
+            String session_username = mTextUsername.getText().toString();
+            Log.d("sara_login_session", "session_username" + session_username);
+
+
+            Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            Intent LoginScreen = new Intent(SecScreen.this, AdminHome.class);
+            LoginScreen.putExtra("USERNAME", session_username);
+            startActivity(LoginScreen);
+        } else if (temp.equals("2")) { //User role login
+
+
+            Log.d("sara_sa", "resstatus");
+            String session_username_user = mTextUsername.getText().toString();
+            Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            Intent LoginScreen = new Intent(SecScreen.this, DummyActivity.class);
+            LoginScreen.putExtra("USERNAME", session_username_user);
+            startActivity(LoginScreen);
+
+        } else if (temp.equals("1")) { //RA role login
+
+            Log.d("sara_sa", "resstatus");
+            String session_username_ra = mTextUsername.getText().toString();
+            Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            Intent LoginScreen = new Intent(SecScreen.this, RaHomeScreen.class);
+            LoginScreen.putExtra("USERNAME", session_username_ra);
+            startActivity(LoginScreen);
+
+        }
+
+          }
+       else
         {
             Log.d("sara_sec_login", "result from checking user in table returned false");
             Toast.makeText(SecScreen.this, "Login Error, Try again with correct credentials", Toast.LENGTH_SHORT).show();

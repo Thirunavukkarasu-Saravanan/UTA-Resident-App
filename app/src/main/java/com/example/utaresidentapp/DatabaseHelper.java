@@ -13,15 +13,18 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String STRING2 = null;
+    private static String STRING3 = null;
     private static SQLiteDatabase sqliteDb;
 
     private static DatabaseHelper instance;
 
     private static final int DATABASE_VERSION = 1;
 
-    public static final String DATABASE_NAME ="resident1.db";
+    public static final String DATABASE_NAME ="utaresident.db";
     public static final String TABLE_NAME ="mainusers";
     public static final String TABLE_NAME2 ="mainaparatment";
+    public static final String TABLE_NAME3 = "mainannouncement";
+    //columns for mainusers
     public static final String COL_1="utaid";
     public static final String COL_2="us_id";
     public static final String COL_3="pass_word";
@@ -32,10 +35,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_8="emerphone";
     public static final String COL_9="aptno";
     public static final String COL_10="graddt";
+    //columns for mainaparatment
     public static final String COL_11="apt_id";
     public static final String COL_12="apart_name";
     public static final String COL_13="apart_block";
     public static final String COL_14="apart_number";
+    //columns for mainannouncement
+    public static final String COL_1_ANCMNT = "acmnt_id";
+    public static final String COL_2_ANCMNT = "acmnt_topic";
+    public static final String COL_3_ANCMNT = "acmnt_desc";
+    public static final String COL_4_ANCMNT = "acmnt_date";
+    public static final String COL_5_ANCMNT = "acmnt_time";
+    public static final String COL_6_ANCMNT = "acmnt_by";
+
+
+
 
 
 
@@ -75,6 +89,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(STRING2);
         Log.d("Sara_dbhelper", "apartment table created");
 
+        STRING3 = ("CREATE TABLE mainannouncement( acmnt_id INTEGER PRIMARY KEY AUTOINCREMENT  , " +
+                "acmnt_topic  TEXT, " +
+                "acmnt_desc TEXT, " +
+                "acmnt_date TEXT, " +
+                "acmnt_time TEXT, " +
+                "acmnt_by  TEXT)");
+
+        sqLiteDatabase.execSQL(STRING3);
+
 
 
 
@@ -86,8 +109,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME2);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME3);
         onCreate(sqLiteDatabase);
         sqliteDb.execSQL(STRING2);
+        sqliteDb.execSQL(STRING3);
 
     }
 
@@ -248,11 +273,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         db.close();
         //return res;
-
-
-
         return aptres;
     }
+
+    public long postancmt(String acmt_topic,String acmt_desc,String acmt_date,String acmt_time,String acmt_by)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+       // contentValues.put("acmnt_id ", acmt_id);
+        contentValues.put("acmnt_topic", acmt_topic);
+        contentValues.put("acmnt_desc", acmt_desc);
+        contentValues.put("acmnt_date", acmt_date);
+        contentValues.put("acmnt_time", acmt_time);
+        contentValues.put("acmnt_by", acmt_by);
+
+        long postancmtres = db.insert("mainannouncement" , null, contentValues);
+        Log.d(
+                "querytag","sara created" + postancmtres
+
+        );
+        db.close();
+        //return res;
+        return postancmtres;
+    }
+
+
+
 
 
 

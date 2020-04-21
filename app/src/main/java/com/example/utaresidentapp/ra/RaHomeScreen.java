@@ -22,7 +22,8 @@ import com.example.utaresidentapp.profile;
 public class RaHomeScreen extends AppCompatActivity {
 
     static String session_var_username;
-    private Button btn_profile_ra;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class RaHomeScreen extends AppCompatActivity {
     public void openPostancmnt() {
 
         Intent intent = new Intent(this, postAncmnt.class);
+        intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
 
