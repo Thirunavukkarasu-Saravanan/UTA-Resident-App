@@ -77,15 +77,19 @@ public class SecScreen extends AppCompatActivity {
 
 
                 Log.d("sara_sa", "resstatus");
+                String session_username_user = mTextUsername.getText().toString();
                 Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
                 Intent LoginScreen = new Intent(SecScreen.this, DummyActivity.class);
+                LoginScreen.putExtra("USERNAME", session_username_user);
                 startActivity(LoginScreen);
 
             } else if ( temp.equals("1")) { //RA role login
 
                 Log.d("sara_sa", "resstatus");
+                String session_username_ra = mTextUsername.getText().toString();
                 Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
                 Intent LoginScreen = new Intent(SecScreen.this, RaHomeScreen.class);
+                LoginScreen.putExtra("USERNAME", session_username_ra);
                 startActivity(LoginScreen);
 
             }

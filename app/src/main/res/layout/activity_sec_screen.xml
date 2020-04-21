@@ -14,7 +14,7 @@
     android:id="@+id/succView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:drawableLeft="@color/colorPrimaryDark"
+        android:drawableLeft="@color/colorPrimaryDark"
     android:text="Mavericks"
     android:textColor="#AB3F51B5"
     android:textSize="30sp"
@@ -46,6 +46,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#8BFF5722"
+        android:ems="10"
+        android:inputType="textPassword"
 
 
         android:hint="Password" />
@@ -71,6 +73,7 @@
             android:textColor="#090808"
             android:text="Trouble logging in? Click here"/>
     </LinearLayout>
+
 
 
 
