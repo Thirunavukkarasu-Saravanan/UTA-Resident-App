@@ -54,7 +54,7 @@ public class SecScreen extends AppCompatActivity {
 
         //mTextUsername.setText("chanhed");
 
-         if(res == true)  {
+        if(res == true)  {
         Cursor cursor = db.checkRole(user);
         if (cursor.moveToNext()) {
             String myrole = cursor.getString(0);
@@ -64,7 +64,7 @@ public class SecScreen extends AppCompatActivity {
         }
 
         //admin role login
-        if (temp.equals("3") || user.equals("sara")) {
+        if (temp.equals("3") /*|| user.equals("sara")*/) {
             String session_username = mTextUsername.getText().toString();
             Log.d("sara_login_session", "session_username" + session_username);
 

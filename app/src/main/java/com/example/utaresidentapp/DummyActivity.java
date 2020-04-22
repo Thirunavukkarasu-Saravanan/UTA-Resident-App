@@ -89,6 +89,7 @@ public class DummyActivity extends AppCompatActivity {
     public void openWorkOrder() {
 
         Intent intent = new Intent(this, User_WorkOrder.class);
+        intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
     public void openEmerCntct() {

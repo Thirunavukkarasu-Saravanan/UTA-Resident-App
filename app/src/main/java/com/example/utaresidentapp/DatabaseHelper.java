@@ -14,16 +14,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String STRING2 = null;
     private static String STRING3 = null;
+    private static String STRING4 = null;
     private static SQLiteDatabase sqliteDb;
 
     private static DatabaseHelper instance;
 
     private static final int DATABASE_VERSION = 1;
 
-    public static final String DATABASE_NAME ="utaresident.db";
+    public static final String DATABASE_NAME ="utaresidentapp.db";
     public static final String TABLE_NAME ="mainusers";
     public static final String TABLE_NAME2 ="mainaparatment";
     public static final String TABLE_NAME3 = "mainannouncement";
+    public static final String TABLE_NAME4 = "mainworkorder";
     //columns for mainusers
     public static final String COL_1="utaid";
     public static final String COL_2="us_id";
@@ -47,6 +49,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4_ANCMNT = "acmnt_date";
     public static final String COL_5_ANCMNT = "acmnt_time";
     public static final String COL_6_ANCMNT = "acmnt_by";
+    //columns for mainworkorder
+    public static final String COL_1_WORDER = "work_id";
+    public static final String COL_2_WORDER = "work_requestby";
+    public static final String COL_3_WORDER = "work_block";
+    public static final String COL_4_WORDER = "work_no";
+    public static final String COL_5_WORDER = "work_desc";
+    public static final String COL_6_WORDER = "work_date";
+    public static final String COL_7_WORDER = "work_time";
+    public static final String COL_8_WORDER = "work_status";
+    //public static final String COL_9_WORDER = "work_id";
+
+
 
 
 
@@ -98,6 +112,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(STRING3);
 
+        STRING4 = ("CREATE TABLE mainworkorder( work_id INTEGER PRIMARY KEY AUTOINCREMENT  , " +
+                "work_requestby  TEXT, " +
+                "work_block TEXT, " +
+                "work_no TEXT, " +
+                "work_desc TEXT, " +
+                "work_date TEXT, " +
+                "work_time TEXT, " +
+                "work_status TEXT) ");
+        sqLiteDatabase.execSQL(STRING4);
+
 
 
 
@@ -110,9 +134,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME2);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME3);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME4);
         onCreate(sqLiteDatabase);
         sqliteDb.execSQL(STRING2);
         sqliteDb.execSQL(STRING3);
+        sqliteDb.execSQL(STRING4);
 
     }
 
@@ -249,9 +275,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
         return cursor;
 
+    }
 
+    public Cursor getaptdetails(String username){
+        String[] columns ={ COL_7,COL_9 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_2 + "=?";
+        String[] selectionArgs = {username};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        return cursor;
 
     }
+
+
 
 
 
@@ -273,6 +309,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         db.close();
         return aptres;
+    }
+
+
+    public long reqworkorder(String w_requestby,String w_block,String w_no,String w_desc,String w_date,String w_time,String w_status)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+       // contentValues.put("work_id", w_id);
+        contentValues.put("work_requestby", w_requestby);
+        contentValues.put("work_block", w_block);
+        contentValues.put("work_no", w_no);
+        contentValues.put("work_desc", w_desc);
+        contentValues.put("work_date", w_date);
+        contentValues.put("work_time", w_time);
+        contentValues.put("work_status", w_status);
+
+
+        long workres = db.insert("mainworkorder" , null, contentValues);
+        Log.d(
+                "querytag","sara created" + workres
+
+        );
+        db.close();
+        return workres;
     }
 
     public long postancmt(String acmt_topic,String acmt_desc,String acmt_date,String acmt_time,String acmt_by)
