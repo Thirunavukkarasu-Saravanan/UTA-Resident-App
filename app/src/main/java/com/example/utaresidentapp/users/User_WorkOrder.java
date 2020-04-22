@@ -65,7 +65,7 @@ public class User_WorkOrder extends AppCompatActivity {
         //System Date
         final SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         final String formattedDate = df.format(c);
-        Log.d("sara_post_ancment", "df " + formattedDate);
+        //Log.d("sara_post_ancment", "df " + formattedDate);
         final EditText descr = (EditText)findViewById(R.id.editttext_password);
 
         Button reqWork = (Button)findViewById(R.id.button_login);
