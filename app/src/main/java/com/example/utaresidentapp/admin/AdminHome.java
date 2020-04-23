@@ -88,7 +88,7 @@ public class AdminHome extends AppCompatActivity {
 
 
             public void onClick(View v){
-                Intent intent = new Intent(AdminHome.this, viewApt.class );
+                Intent intent = new Intent(AdminHome.this, viewAptNew.class );
                 startActivity(intent);
 
             }
