@@ -252,6 +252,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public Cursor getWorkOrderRequest(String work_id){
+//        Log.d(
+//                "sara_login_session","Profile updated" + us_id
+//
+//        );
+        String[] columns ={ COL_1_WORDER,COL_2_WORDER,COL_3_WORDER,COL_4_WORDER,COL_5_WORDER,COL_6_WORDER,COL_7_WORDER,COL_8_WORDER};
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_1_WORDER + "=?";
+        String[] selectionArgs = {work_id};
+        Cursor cursor = db.query(TABLE_NAME4, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+    }
+
 
 
     public Cursor modifyProfile(String utaid){
@@ -373,7 +386,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return postancmtres;
     }
 
+    public Cursor getAnnouncements(String user_id){
+        Log.d(
+                "sara_login_session","getAcmntuserid :" + user_id
 
+        );
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME3,null);
+        return data;
+    }
+
+    public Cursor getAnnouncementsById(String acmnt_id){
+//        Log.d(
+//                "sara_login_session","Profile updated" + us_id
+//
+//        );
+        String[] columns ={ COL_1_ANCMNT,COL_2_ANCMNT,COL_3_ANCMNT,COL_4_ANCMNT,COL_5_ANCMNT,COL_6_ANCMNT};
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_1_ANCMNT + "=?";
+        String[] selectionArgs = {acmnt_id};
+        Cursor cursor = db.query(TABLE_NAME3, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+    }
 
 
 

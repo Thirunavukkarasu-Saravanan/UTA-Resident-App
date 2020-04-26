@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    tools:context=".admin.view_workorder_detail">
+
+
+    <TextView
+        android:id="@+id/worker_order_detail"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@color/colorPrimaryDark"
+        android:text="Work Order Detail"
+        android:textColor="#3F51B5"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TableLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="25dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#D3D3D3">
+
+        <TableRow>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Work Req By:"
+                android:textStyle="bold"
+                android:background="#f1f1f1"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:id="@+id/work_req_by"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="2.5"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="1dp"
+                android:textColor="#000000"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Apt Block:"
+                android:textStyle="bold"
+                android:background="#f1f1f1"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:id="@+id/apt_block"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="2.5"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="1dp"
+                android:textColor="#000000"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Apt Number:"
+                android:textStyle="bold"
+                android:background="#f1f1f1"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:id="@+id/apt_no"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="2.5"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="1dp"
+                android:textColor="#000000"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Requested On:"
+                android:textStyle="bold"
+                android:background="#f1f1f1"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:id="@+id/req_on"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="2.5"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="1dp"
+                android:textColor="#000000"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Description:"
+                android:textStyle="bold"
+                android:background="#f1f1f1"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:id="@+id/desc"
+                android:maxWidth="100dp"
+                android:layout_height="wrap_content"
+                android:text="gf bbj b hj khb hbh hkbbv "
+                android:textStyle="bold"
+                android:layout_weight="2.5"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:textSize="15dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                tools:ignore="RtlCompat" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Status:"
+                android:textStyle="bold"
+                android:background="#f1f1f1"
+                android:layout_marginVertical="1dp"
+                android:layout_marginLeft="1dp"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Active"
+                android:textStyle="bold"
+                android:layout_weight="2.5"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_marginVertical="1dp"
+                android:layout_marginHorizontal="1dp"
+                android:textColor="#000000"
+                android:padding="6dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat" />
+        </TableRow>
+    </TableLayout>
+
+
+</LinearLayout>

@@ -22,12 +22,18 @@ import com.example.utaresidentapp.SecScreen;
 public class addApt extends AppCompatActivity {
     //AdminController adminCont = new AdminController(this);
     DatabaseHelper db = new DatabaseHelper(this);
-
+    int apt_id=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_apt);
+        //fetch apt_id from intent that is getting transferred from view_apt page with apt_id string key.
+        apt_id= getIntent().getIntExtra("apt_id",0);
+        //if apt_id is equal to
+        if(apt_id!=0){
+
+        }
 
         final EditText addaptname =(EditText)findViewById(R.id.textInputEditText5);
         final EditText addaptblock=(EditText)findViewById(R.id.textInputEditText13);

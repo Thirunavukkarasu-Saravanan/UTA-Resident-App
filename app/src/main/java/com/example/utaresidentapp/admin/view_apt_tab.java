@@ -85,6 +85,17 @@ public class view_apt_tab extends AppCompatActivity {
                 tr.addView(tv2);
                 tr.addView(tv3);
                 tl.addView(tr, layoutParams);
+
+                tr.setClickable(true);
+                tr.setId(Integer.parseInt(data.getString(0)));
+                tr.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(view_apt_tab.this,addApt.class);
+                        intent.putExtra("apt_id",v.getId());
+                        startActivity(intent);
+                    }
+                });
             }
 
 
