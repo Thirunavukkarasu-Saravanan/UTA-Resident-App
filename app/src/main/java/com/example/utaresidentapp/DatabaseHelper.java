@@ -239,6 +239,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+
+
+    public Cursor getWorkOrder(String user_id){
+        Log.d(
+                "sara_login_session","getWorkOrderuserid :" + user_id
+
+        );
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME4,null);
+        return data;
+    }
+
+
+
     public Cursor modifyProfile(String utaid){
         String[] columns ={ COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9, COL_10 };
         SQLiteDatabase db = getReadableDatabase();

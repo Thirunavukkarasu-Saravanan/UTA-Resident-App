@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.utaresidentapp.Controller.LoginController;
+import com.example.utaresidentapp.admin.viewWorkOrder;
 import com.example.utaresidentapp.users.User_WorkOrder;
 import com.example.*;
 
@@ -21,6 +22,7 @@ public class DummyActivity extends AppCompatActivity {
 
     private Button btn_workordr;
     private Button btn_viewancmnt;
+    private Button btn_viewbtn_workordr;
     private Button btn_emercont;
     private Button btn_myprofile;
     static String session_var_username;
@@ -43,6 +45,18 @@ public class DummyActivity extends AppCompatActivity {
 
 
         });
+
+        btn_viewbtn_workordr = findViewById(R.id.button6);
+        btn_viewbtn_workordr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewWorkOrder();
+            }
+
+
+        });
+
+
 
 
 
@@ -92,9 +106,17 @@ public class DummyActivity extends AppCompatActivity {
         intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
+
     public void openEmerCntct() {
 
         Intent intent = new Intent(this, EmrgncyContct.class);
+        startActivity(intent);
+    }
+
+    public void viewWorkOrder() {
+
+        Intent intent = new Intent(this, viewWorkOrder.class);
+        intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
 

@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.utaresidentapp.DatabaseHelper;
@@ -28,6 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class viewApt extends AppCompatActivity {
+
+
 
     DatabaseHelper db = new DatabaseHelper(this);
     @Override
