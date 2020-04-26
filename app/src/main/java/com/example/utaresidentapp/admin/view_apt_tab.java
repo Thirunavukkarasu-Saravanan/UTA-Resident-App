@@ -43,7 +43,7 @@ public class view_apt_tab extends AppCompatActivity {
         tl.setColumnStretchable(0, true);
         tl.setColumnStretchable(1, true);
         tl.setColumnStretchable(2, true);
-        
+
 
         TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
         TableRow.LayoutParams tr_param = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
