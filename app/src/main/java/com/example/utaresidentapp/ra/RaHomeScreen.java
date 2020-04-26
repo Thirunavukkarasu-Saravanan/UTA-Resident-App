@@ -43,8 +43,6 @@ public class RaHomeScreen extends AppCompatActivity {
 
         });
 
-
-
         Button btn_emercntct = findViewById(R.id.button12);
         btn_emercntct.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -2,10 +2,12 @@ package com.example.utaresidentapp.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -83,6 +85,17 @@ public class viewWorkOrder extends AppCompatActivity {
                 tr.addView(tv3);
                 tr.addView(tv4);
                 tl.addView(tr, layoutParams);
+
+                tr.setClickable(true);
+                tr.setId(Integer.parseInt(data.getString(0)));
+                tr.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(viewWorkOrder.this,view_workorder_detail.class);
+                        intent.putExtra("work_id",v.getId());
+                        startActivity(intent);
+                    }
+                });
             }
         }
     }
