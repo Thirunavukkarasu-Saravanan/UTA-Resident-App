@@ -434,10 +434,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getAnnouncementsById(String acmnt_id){
-//        Log.d(
-//                "sara_login_session","Profile updated" + us_id
-//
-//        );
+
         String[] columns ={ COL_1_ANCMNT,COL_2_ANCMNT,COL_3_ANCMNT,COL_4_ANCMNT,COL_5_ANCMNT,COL_6_ANCMNT};
         SQLiteDatabase db = getReadableDatabase();
         String selection = COL_1_ANCMNT + "=?";
@@ -445,6 +442,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_NAME3, columns,selection, selectionArgs, null,null,null);
         return cursor;
     }
-
 
 }
