@@ -7,9 +7,11 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.autofill.AutofillValue;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -20,7 +22,7 @@ import com.example.utaresidentapp.DatabaseHelper;
 import com.example.utaresidentapp.R;
 
 public class viewAnnouncement extends AppCompatActivity {
-    TextView tv1,tv2;
+    TextView tv1,tv2,tv3;
     TableLayout tl;
     TableRow tr;
 
@@ -58,6 +60,7 @@ public class viewAnnouncement extends AppCompatActivity {
                 tr = new TableRow(this);
                 tv1 = new TextView(this);
                 tv2 = new TextView(this);
+                tv3 = new TextView(this);
 
                 tv1.setHeight(25);
                 tv1.setText(data.getString(3));
@@ -79,11 +82,22 @@ public class viewAnnouncement extends AppCompatActivity {
                 tv2.setPadding(6,6,6,6);
                 tv2.setTextColor(Color.parseColor("#333333"));
                 tv2.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+
+//                tv3.setHeight(25);
+//                tv3.setText(data.getString(2));
+//                tv3.setGravity(Gravity.CENTER);
+//                tv3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+//                tv3.setLayoutParams(tr_param2);
+//                tv3.setPadding(10,6,6,6);
+//                tv3.setTextSize(TypedValue.COMPLEX_UNIT_SP,15);
+//                tv3.setTextColor(Color.parseColor("#333333"));
+
+
                 //tv2.setGravity(Gravity.LEFT);
 
                 tr.addView(tv1);
                 tr.addView(tv2);
-
+               // tr.addView(tv3);
                 tl.addView(tr, layoutParams);
 
                 tr.setClickable(true);
@@ -91,7 +105,10 @@ public class viewAnnouncement extends AppCompatActivity {
                 tr.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+
                         Intent intent=new Intent(viewAnnouncement.this,view_announcement_detail.class);
+                        Log.d("sara_updApt", "acmnt_id from ancmt " + v.getId());
                         intent.putExtra("acmnt_id",v.getId());
                         startActivity(intent);
                     }

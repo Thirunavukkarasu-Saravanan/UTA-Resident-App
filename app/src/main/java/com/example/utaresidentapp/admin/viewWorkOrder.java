@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableLayout;
@@ -93,6 +94,7 @@ public class viewWorkOrder extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent=new Intent(viewWorkOrder.this,view_workorder_detail.class);
                         intent.putExtra("work_id",v.getId());
+                        Log.d("sara_view_workorder", "v.getId " + v.getId());
                         startActivity(intent);
                     }
                 });

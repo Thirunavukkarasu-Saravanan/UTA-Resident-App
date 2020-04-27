@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -27,8 +28,10 @@ public class view_announcement_detail extends AppCompatActivity {
 
         //fetch apt_id from intent that is getting transferred from view_apt page with apt_id string key.
         acmnt_id= getIntent().getIntExtra("acmnt_id",0);
+        Log.d("sara_updApt", "acmnt_id from detail_ancmt " + acmnt_id);
         //if apt_id is equal to
         if(acmnt_id!=0){
+            Log.d("sara_updApt", "acmnt_id from detail_ancmt before passing to table " + acmnt_id);
             Cursor cursor= db.getAnnouncementsById(String.valueOf(acmnt_id));
             if(cursor.moveToFirst()){
                 String acmnt_id=cursor.getString(0);

@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -81,6 +84,11 @@ public class view_apt_tab extends AppCompatActivity {
                 tv3.setGravity(Gravity.CENTER);
                 tv3.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 tv3.setLayoutParams(tr_param);
+
+
+
+
+
                 tr.addView(tv1);
                 tr.addView(tv2);
                 tr.addView(tv3);
@@ -91,7 +99,8 @@ public class view_apt_tab extends AppCompatActivity {
                 tr.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(view_apt_tab.this,addApt.class);
+                        Intent intent=new Intent(view_apt_tab.this,updApt.class);
+                        Log.d("sara_updApt", "v.getId " + v.getId());
                         intent.putExtra("apt_id",v.getId());
                         startActivity(intent);
                     }

@@ -17,6 +17,8 @@ import com.example.utaresidentapp.EmrgncyContct;
 import com.example.utaresidentapp.R;
 import com.example.utaresidentapp.SecScreen;
 import com.example.utaresidentapp.admin.addUser;
+import com.example.utaresidentapp.admin.viewAnnouncement;
+import com.example.utaresidentapp.admin.viewWorkOrder;
 import com.example.utaresidentapp.profile;
 
 public class RaHomeScreen extends AppCompatActivity {
@@ -53,6 +55,27 @@ public class RaHomeScreen extends AppCompatActivity {
 
         });
 
+
+        Button btn_viewancmt = findViewById(R.id.button6);
+        btn_viewancmt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openviewAncmt();
+            }
+
+
+        });
+
+        Button btn_viewworkorder = findViewById(R.id.button3);
+        btn_viewworkorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openviewwork();
+            }
+
+
+        });
+
         Button btn_myprofile = findViewById(R.id.button10);
         btn_myprofile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +99,19 @@ public class RaHomeScreen extends AppCompatActivity {
         Intent intent = new Intent(this, EmrgncyContct.class);
         startActivity(intent);
     }
+
+    public void openviewAncmt() {
+
+        Intent intent = new Intent(this, viewAnnouncement.class);
+        startActivity(intent);
+    }
+
+    public void openviewwork() {
+
+        Intent intent = new Intent(this, viewWorkOrder.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -104,4 +140,7 @@ public class RaHomeScreen extends AppCompatActivity {
         intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
+
+
+
 }

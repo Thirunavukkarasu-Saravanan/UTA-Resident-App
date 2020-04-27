@@ -69,6 +69,8 @@ public class addApt extends AppCompatActivity {
                             long insertsucc = db.addapart(aptname,aptblock,aptnumber);
                             if(insertsucc != -1){
                                 Toast.makeText(addApt.this, "Apartment Successfully added", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(addApt.this, AdminHome.class);
+                                startActivity(intent);
                             }
                             else{
                                 Toast.makeText(addApt.this, "Add Apartment failed, Pleas Try again", Toast.LENGTH_SHORT).show();

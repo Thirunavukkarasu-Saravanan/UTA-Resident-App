@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -252,6 +249,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+
+
+
     public Cursor getWorkOrderRequest(String work_id){
 //        Log.d(
 //                "sara_login_session","Profile updated" + us_id
@@ -312,6 +312,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {username};
         Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
         return cursor;
+
+    }
+
+    //Method to retrieve data for Update Apartment details for selected Item
+
+    public Cursor getapt(int apart_id){
+        String[] columns ={ COL_11,COL_12,COL_13,COL_14 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_11 + "=?";
+        String[] selectionArgs = new String[]{String.valueOf(apart_id)};
+        Cursor cursor = db.query(TABLE_NAME2, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+
+
+    }
+
+    //Method to update data for Update Apartment details for selected Item
+
+    public int updapt(int apart_id, String upd_apt_name, String upd_apt_block , String upd_apt_num){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("apart_name", upd_apt_name);
+        contentValues.put("apart_block", upd_apt_block);
+        contentValues.put("apart_number", upd_apt_num);
+
+
+        int cursor;
+        cursor = db.update("mainaparatment" , contentValues, "apt_id=?",new String[]{String.valueOf(apart_id)});
+        Log.d(
+                "querytag","Profile updated" + cursor
+
+        );
+        db.close();
+        return cursor;
+
 
     }
 
