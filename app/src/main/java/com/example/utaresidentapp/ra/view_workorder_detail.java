@@ -72,7 +72,7 @@ public class view_workorder_detail extends AppCompatActivity {
                 reqon.setText(work_date);
                 desc.setText(work_desc);
                 status.setText(work_status);
-                
+
                 if(work_status.equals("Active")){
                     rb1.setChecked(true);
                     Log.d("sara_radio", "setting radio button from table : " + rb1.getText() );
