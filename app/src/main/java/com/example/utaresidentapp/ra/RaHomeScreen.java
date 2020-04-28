@@ -16,9 +16,7 @@ import android.widget.Toast;
 import com.example.utaresidentapp.EmrgncyContct;
 import com.example.utaresidentapp.R;
 import com.example.utaresidentapp.SecScreen;
-import com.example.utaresidentapp.admin.addUser;
-import com.example.utaresidentapp.admin.viewAnnouncement;
-import com.example.utaresidentapp.admin.viewWorkOrder;
+import com.example.utaresidentapp.viewAnnouncement;
 import com.example.utaresidentapp.profile;
 
 public class RaHomeScreen extends AppCompatActivity {
@@ -108,7 +106,7 @@ public class RaHomeScreen extends AppCompatActivity {
 
     public void openviewwork() {
 
-        Intent intent = new Intent(this, viewWorkOrder.class);
+        Intent intent = new Intent(this, view_workorder_ra.class);
         startActivity(intent);
     }
 

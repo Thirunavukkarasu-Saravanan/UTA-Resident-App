@@ -10,9 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ra.view_workorder_ra"></activity>
+        <activity android:name=".users.view_workorder_det_user" />
         <activity android:name=".admin.updApt" />
-        <activity android:name=".admin.viewWorkOrder" />
-        <activity android:name=".admin.viewAnnouncement" />
+        <activity android:name=".viewWorkOrder" />
+        <activity android:name=".viewAnnouncement" />
         <activity android:name=".admin.view_apt_tab" />
         <activity android:name=".admin.admin_update_profile" />
         <activity android:name=".admin.modify_user" />
@@ -20,13 +22,13 @@
         <activity android:name=".ra.postAncmnt" />
         <activity android:name=".ra.RaHomeScreen" />
         <activity android:name=".admin.addApt" />
-        <activity android:name=".admin.view_workorder_detail"/>
+        <activity android:name=".ra.view_workorder_detail" />
         <activity android:name=".admin.addUser" />
         <activity android:name=".admin.AdminHome" />
         <activity android:name=".users.User_WorkOrder" />
         <activity android:name=".admin.viewApt" />
         <activity android:name=".Controller.Users.workorder" />
-        <activity android:name=".admin.view_announcement_detail" />
+        <activity android:name=".view_announcement_detail" />
         <activity
             android:name=".ui.login.WorkOrder"
             android:label="@string/title_activity_work_order" />

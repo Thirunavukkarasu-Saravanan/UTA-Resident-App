@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="match_parent"
     android:gravity="center_horizontal"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ra.view_workorder_detail">
-
+    tools:context=".users.view_workorder_det_user">
 
     <TextView
         android:id="@+id/worker_order_detail"
@@ -222,42 +221,6 @@
                 tools:ignore="RtlCompat" />
         </TableRow>
     </TableLayout>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="174dp"
-        android:layout_height="33dp"
-        android:text="Update Status"
-        android:textColor="@color/colorPrimaryDark"
-        android:gravity="center"
-        />
-
-    <RadioGroup
-        android:id="@+id/updstatRadioGroup"
-        android:layout_width="175dp"
-        android:layout_height="84dp" >
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="Active" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="Complete" />
-    </RadioGroup>
-
-    <Button
-
-        android:id="@+id/button16"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:text="Update" />
 
 
 </LinearLayout>

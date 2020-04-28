@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:gravity="center_horizontal"
     android:layout_height="match_parent"
-    tools:context=".admin.view_announcement_detail">
+    tools:context=".view_announcement_detail">
 
     <TextView
         android:id="@+id/worker_order_detail"

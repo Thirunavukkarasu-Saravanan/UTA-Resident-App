@@ -1,4 +1,4 @@
-package com.example.utaresidentapp.admin;
+package com.example.utaresidentapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,15 +11,10 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-import android.view.autofill.AutofillValue;
-import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.utaresidentapp.DatabaseHelper;
-import com.example.utaresidentapp.R;
 
 public class viewAnnouncement extends AppCompatActivity {
     TextView tv1,tv2,tv3;
@@ -107,7 +102,7 @@ public class viewAnnouncement extends AppCompatActivity {
                     public void onClick(View v) {
 
 
-                        Intent intent=new Intent(viewAnnouncement.this,view_announcement_detail.class);
+                        Intent intent=new Intent(viewAnnouncement.this, view_announcement_detail.class);
                         Log.d("sara_updApt", "acmnt_id from ancmt " + v.getId());
                         intent.putExtra("acmnt_id",v.getId());
                         startActivity(intent);

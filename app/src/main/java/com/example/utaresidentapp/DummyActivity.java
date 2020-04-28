@@ -13,11 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.utaresidentapp.Controller.LoginController;
-import com.example.utaresidentapp.admin.viewWorkOrder;
 import com.example.utaresidentapp.users.User_WorkOrder;
-import com.example.utaresidentapp.admin.viewAnnouncement;
-import com.example.*;
 
 public class DummyActivity extends AppCompatActivity {
 

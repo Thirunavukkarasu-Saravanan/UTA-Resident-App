@@ -351,6 +351,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public int updstatus(int w_id,String w_status){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("work_status", w_status);
+
+        int cursor;
+        cursor = db.update("mainworkorder" , contentValues, "work_id=?",new String[]{String.valueOf(w_id)});
+        db.close();
+        return cursor;
+
+    }
+
 
 
 
@@ -442,5 +454,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_NAME3, columns,selection, selectionArgs, null,null,null);
         return cursor;
     }
+
+
 
 }

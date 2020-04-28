@@ -1,4 +1,4 @@
-package com.example.utaresidentapp.admin;
+package com.example.utaresidentapp.ra;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,8 @@ import android.widget.Toast;
 
 import com.example.utaresidentapp.DatabaseHelper;
 import com.example.utaresidentapp.R;
-public class viewWorkOrder extends AppCompatActivity {
+
+public class view_workorder_ra extends AppCompatActivity {
 
     TextView tv1, tv2, tv3,tv4;
     TableLayout tl;
@@ -28,7 +29,7 @@ public class viewWorkOrder extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_work_order);
+        setContentView(R.layout.activity_view_workorder_ra);
 
         String session_var_userid = getIntent().getStringExtra("NAME");
 
@@ -92,7 +93,7 @@ public class viewWorkOrder extends AppCompatActivity {
                 tr.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(viewWorkOrder.this,view_workorder_detail.class);
+                        Intent intent=new Intent(view_workorder_ra.this,view_workorder_detail.class);
                         intent.putExtra("work_id",v.getId());
                         Log.d("sara_view_workorder", "v.getId " + v.getId());
                         startActivity(intent);

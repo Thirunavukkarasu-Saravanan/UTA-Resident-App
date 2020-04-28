@@ -1,24 +1,22 @@
-package com.example.utaresidentapp.admin;
+package com.example.utaresidentapp.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.utaresidentapp.DatabaseHelper;
 import com.example.utaresidentapp.R;
-import com.example.utaresidentapp.SecScreen;
 
-public class view_workorder_detail extends AppCompatActivity {
+public class view_workorder_det_user extends AppCompatActivity {
     int work_id=0;
     DatabaseHelper db = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_workorder_detail);
+        setContentView(R.layout.activity_view_workorder_det_user);
         final TextView workreqby =(TextView) findViewById(R.id.work_req_by);
         final TextView aptblock=(TextView) findViewById(R.id.apt_block);
         final TextView aptno =(TextView) findViewById(R.id.apt_no);

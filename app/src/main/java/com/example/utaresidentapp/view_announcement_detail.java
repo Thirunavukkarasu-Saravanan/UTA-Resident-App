@@ -1,4 +1,4 @@
-package com.example.utaresidentapp.admin;
+package com.example.utaresidentapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
