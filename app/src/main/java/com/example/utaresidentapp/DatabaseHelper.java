@@ -237,6 +237,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public Cursor getProfilebyutaid(String us_id){
+        Log.d(
+                "sara_login_session","Profile updated" + us_id
+
+        );
+        String[] columns ={ COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9, COL_10 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_1 + "=?";
+        String[] selectionArgs = {us_id};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+    }
+
+    public Cursor getProfilebyblock(String apt_block){
+
+        Log.d(
+                "sara_view_my_resident","temp :" + apt_block
+
+        );
+
+        String[] columns ={ COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9, COL_10 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_7 + "=?";
+        String[] selectionArgs = {apt_block};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        Log.d(
+                "querytag","Profile updated" + cursor
+
+        );
+        return cursor;
+    }
+
+
 
     public Cursor getWorkOrder(String user_id){
         Log.d(
@@ -305,6 +338,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Cursor getaptblock(String username){
+        String[] columns ={ COL_7 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_2 + "=?";
+        String[] selectionArgs = {username};
+        Cursor cursor = db.query(TABLE_NAME, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+
+    }
+
+
+
+
     public Cursor getaptdetails(String username){
         String[] columns ={ COL_7,COL_9 };
         SQLiteDatabase db = getReadableDatabase();
@@ -347,7 +393,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         db.close();
         return cursor;
-
 
     }
 

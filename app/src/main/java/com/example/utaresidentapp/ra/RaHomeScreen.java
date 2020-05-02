@@ -74,6 +74,16 @@ public class RaHomeScreen extends AppCompatActivity {
 
         });
 
+        Button btn_viewresident = findViewById(R.id.button4);
+        btn_viewresident.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openviewresident();
+            }
+
+
+        });
+
         Button btn_myprofile = findViewById(R.id.button10);
         btn_myprofile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +111,14 @@ public class RaHomeScreen extends AppCompatActivity {
     public void openviewAncmt() {
 
         Intent intent = new Intent(this, viewAnnouncement.class);
+        startActivity(intent);
+    }
+
+    public void openviewresident() {
+
+        Intent intent = new Intent(RaHomeScreen.this, viewResident.class);
+        Log.d("sara_view_my_resident", "session_var_username in userhome when profile button is clicked" + session_var_username);
+        intent.putExtra("NAME",session_var_username);
         startActivity(intent);
     }
 

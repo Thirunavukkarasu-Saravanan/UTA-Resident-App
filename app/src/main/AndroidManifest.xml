@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ra.view_workorder_ra"></activity>
+        <activity android:name=".ra.view_resident_detail"></activity>
+        <activity android:name=".ra.viewResident" />
+        <activity android:name=".ra.view_workorder_ra" />
         <activity android:name=".users.view_workorder_det_user" />
         <activity android:name=".admin.updApt" />
         <activity android:name=".viewWorkOrder" />
