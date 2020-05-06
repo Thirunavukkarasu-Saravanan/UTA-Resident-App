@@ -49,8 +49,7 @@ public class view_resident_detail extends AppCompatActivity {
                 String grad_date=cursor.getString(9);
                 String password=cursor.getString(2);
                 String user_role=cursor.getString(3);
-
-
+                
                  userid.setText(Userid);
                  aptblock.setText(apt_block);
                 aptno.setText(apt_no);

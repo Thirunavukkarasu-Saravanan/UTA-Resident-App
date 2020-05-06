@@ -298,6 +298,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getWorkOrderByUserRequested(String user_id){
+        String[] columns ={ COL_1_WORDER,COL_2_WORDER,COL_3_WORDER,COL_4_WORDER,COL_5_WORDER,COL_6_WORDER,COL_7_WORDER,COL_8_WORDER};
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_2_WORDER + "=?";
+        String[] selectionArgs = {user_id};
+        Cursor cursor = db.query(TABLE_NAME4, columns,selection, selectionArgs, null,null,null);
+        return cursor;
+    }
+
 
 
     public Cursor modifyProfile(String utaid){

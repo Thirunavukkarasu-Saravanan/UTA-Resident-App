@@ -28,7 +28,7 @@ public class viewAnnouncement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_announcement);
 
-        String session_var_userid = getIntent().getStringExtra("NAME");
+        final String session_var_userid = getIntent().getStringExtra("NAME");
 
         Cursor data = db.getAnnouncements(session_var_userid);
         tl = (TableLayout) findViewById(R.id.tl);
@@ -104,6 +104,7 @@ public class viewAnnouncement extends AppCompatActivity {
 
                         Intent intent=new Intent(viewAnnouncement.this, view_announcement_detail.class);
                         Log.d("sara_updApt", "acmnt_id from ancmt " + v.getId());
+                        intent.putExtra("NAME",session_var_userid);
                         intent.putExtra("acmnt_id",v.getId());
                         startActivity(intent);
                     }

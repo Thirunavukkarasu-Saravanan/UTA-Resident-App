@@ -1,10 +1,15 @@
 package com.example.utaresidentapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,11 +19,13 @@ import com.example.utaresidentapp.SecScreen;
 
 public class view_announcement_detail extends AppCompatActivity {
     int acmnt_id=0;
+    String session_var_userid = null;
     DatabaseHelper db = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_announcement_detail);
+         session_var_userid = getIntent().getStringExtra("NAME");
 
         final TextView pon =(TextView) findViewById(R.id.p_on);
         final TextView pby =(TextView) findViewById(R.id.p_by);
@@ -47,5 +54,28 @@ public class view_announcement_detail extends AppCompatActivity {
                 pby.setText(acmnt_by);
             }
         }
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.logout:{
+                Intent intent = new Intent(this, SecScreen.class);
+                //intent.putExtra("NAME",session_var_userid);
+                startActivity(intent);
+
+            }
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

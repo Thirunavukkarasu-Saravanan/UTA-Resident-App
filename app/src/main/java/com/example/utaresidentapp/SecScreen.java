@@ -67,8 +67,6 @@ public class SecScreen extends AppCompatActivity {
         if (temp.equals("3") /*|| user.equals("sara")*/) {
             String session_username = mTextUsername.getText().toString();
             Log.d("sara_login_session", "session_username" + session_username);
-
-
             Toast.makeText(SecScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
             Intent LoginScreen = new Intent(SecScreen.this, AdminHome.class);
             LoginScreen.putExtra("USERNAME", session_username);

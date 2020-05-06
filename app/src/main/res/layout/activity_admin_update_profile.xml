@@ -51,21 +51,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText16"
-        android:layout_width="329dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="532dp"
-        android:hint="Password"
-        android:visibility="gone"
-        android:textColorHint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText17"
+        android:id="@+id/textInputEditText16"
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginTop="448dp"
@@ -212,8 +201,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText9"
         app:layout_constraintVertical_bias="0.972" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

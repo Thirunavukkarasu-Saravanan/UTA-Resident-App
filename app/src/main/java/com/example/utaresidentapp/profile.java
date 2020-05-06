@@ -20,8 +20,10 @@ import android.widget.Toast;
 import com.example.utaresidentapp.DatabaseHelper;
 import com.example.utaresidentapp.admin.AdminHome;
 import com.example.utaresidentapp.admin.addUser;
+import com.example.utaresidentapp.ra.RaHomeScreen;
 
 public class profile extends AppCompatActivity {
+    int temp = 0;
     RadioGroup radioGroup;
     RadioButton rb1; //= (RadioButton) findViewById(R.id.radioButton);
     RadioButton rb2; //= (RadioButton) findViewById(R.id.radioButton2);
@@ -118,6 +120,9 @@ public class profile extends AppCompatActivity {
                     else if(rb2.isChecked()==true){
                         f_user_type="2";
                     }
+                    else{
+                        f_user_type="3";
+                    }
                 }
                 Log.d("sara_radio", "insideoncreate " + f_user_type);
                 // Log.d("sara_radio", "password " + String.valueOf(usertype2));
@@ -150,8 +155,31 @@ public class profile extends AppCompatActivity {
 
                     if(insertesucc != 0) {
                         Toast.makeText(profile.this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(profile.this, AdminHome.class);
-                        startActivity(intent);
+                        Cursor cursor = db.checkRole(session_var_userid);
+                        if (cursor.moveToNext()) {
+                            String myrole = cursor.getString(0);
+                            Log.d("sara_sec_login", "myrole" + myrole);
+                            temp = Integer.parseInt(myrole);
+
+                        }
+                        Log.d("sara_profile_check", "myrole" + temp);
+
+                            if(temp == 1 ) {
+                                Log.d("sara_profile_check", "myrole" + temp);
+                                Intent intent = new Intent(profile.this, RaHomeScreen.class);
+                                startActivity(intent);
+                            }
+                            else if(temp == 2 ){
+                                Log.d("sara_profile_check", "myrole" + temp);
+                                Intent intent = new Intent(profile.this, DummyActivity.class);
+                                startActivity(intent);
+
+                            }
+                            else{
+                                Log.d("sara_profile_check", "myrole" + temp);
+                                Intent intent = new Intent(profile.this, AdminHome.class);
+                                startActivity(intent);
+                            }
                     }
                     else
                     {

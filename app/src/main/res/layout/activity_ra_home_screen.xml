@@ -63,7 +63,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginEnd="86dp"
         android:layout_marginBottom="64dp"
-        android:text="View Work Orders"
+        android:text="View /Modify Work Orders"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="263dp" />

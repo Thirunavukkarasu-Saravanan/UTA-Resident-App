@@ -1,5 +1,6 @@
 package com.example.utaresidentapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +9,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -33,7 +37,7 @@ public class viewWorkOrder extends AppCompatActivity {
         String session_var_userid = getIntent().getStringExtra("NAME");
 
 
-        Cursor data = db.getWorkOrder(session_var_userid);
+        Cursor data = db.getWorkOrderByUserRequested(session_var_userid);
         tl = (TableLayout) findViewById(R.id.tl);
         tl.setColumnStretchable(2, true);
         tl.setColumnStretchable(3, true);
@@ -45,9 +49,9 @@ public class viewWorkOrder extends AppCompatActivity {
 
         //layoutParams.setMargins(1,1,1,1);
         tr_param.weight = 1.0f;
-        tr_param.height = 70;
+        tr_param.height = 90;
         tr_param.setMargins(4, 4, 4, 4);
-        tr_param.width = 100;
+        tr_param.width = 110;
 
 
         if (data.getCount() == 0) {
@@ -100,5 +104,26 @@ public class viewWorkOrder extends AppCompatActivity {
                 });
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.logout:{
+                Intent intent = new Intent(this, SecScreen.class);
+                //intent.putExtra("NAME",session_var_userid);
+                startActivity(intent);
+
+            }
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }
