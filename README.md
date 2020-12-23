@@ -9,13 +9,17 @@ User roles
 
 The development process was based on Object Oriented Software engineering pricinples where
 
-1. Requiremens were derived from specification, designed and implemented
-2. Presented deliverables and peer-review of deliverables was conducted
-3. Tested and demoed the final object-oriented application
+1. Requiremens were derived from specification, designed and implemented.
+2. Presented deliverables and peer-review of deliverables was conducted.
+3. Tested and demoed the final object-oriented application.
+
+Object Oriented Principles involved:
+
+Followed Iterative phases of Requirements elicitation, accomodated requirements change, derived Use Cases, designed UI prototypes and sequence diagrams, utilized controller design patterns, synched commits based on sprints.
 
 Tools/ Techniques used:
 
-1. Object-oriented software engineering principles - Unified Modeling Language, including use-case, sequence, and class diagrams
+1. Object-oriented software engineering principles - Unified Modeling Language, including use-case, sequence, and class diagrams.
 2. Technologies: Android Studio, Java, MySQLite
 3. Test automation framework JUnit. 
 
